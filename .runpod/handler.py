@@ -138,7 +138,7 @@ def run_inference(
         with torch.cuda.amp.autocast(enabled=True):
             pipe_kwargs = dict(
                 prompt=prompt,
-                negative_prompt=negative_prompt if negative_prompt else None,
+                negative_prompt=negative_prompt or "",
                 height=height,
                 width=width,
                 num_inference_steps=num_inference_steps,
