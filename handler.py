@@ -78,8 +78,8 @@ def load_pipeline():
 
     print(f"  Device: {_device}, dtype: {dtype}", flush=True)
 
-    # Load pipeline from HuggingFace (weights NOT in image — downloaded on cold start)
-    # SanaPipeline uses DC-AE + Gemma 2 text encoder + linear attention DiT
+    # Load pipeline from local model path baked into the image at build time.
+    # SanaPipeline uses DC-AE + Gemma 2 text encoder + linear attention DiT.
     pipe = SanaPipeline.from_pretrained(
         MODEL_ID,
         torch_dtype=dtype,
